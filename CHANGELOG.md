@@ -2,6 +2,12 @@
 
 This project won't have versionining per se. But it's format is based in the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2022-07-12
+
+### Added
+
+- Created the specificity utility for both, python and javascript.
+
 ## 2022-06-26
 
 ### Added

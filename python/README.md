@@ -6,5 +6,6 @@
 
 ## Done
 
-- [ascii-to-text.py](./python/ascii-to-text.py)
-- [store-folder-state.py](./python/store-folder-state.py)
+- [ascii-to-text.py](./ascii-to-text.py)
+- [store-folder-state.py](./store-folder-state.py)
+- [specificity.py](./specificity.py)
