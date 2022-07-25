@@ -61,4 +61,4 @@ if __name__ == '__main__':
     main()
 
     # usage example
-    # python3 github-repository-created_at.py jofavala
+    # python3 github-repository-created_at.py jofaval
