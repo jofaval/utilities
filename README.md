@@ -15,7 +15,7 @@ An easy and fast to develop in language that's proven to be very useful, special
 
 ## Javascript
 
-The langauge by default for user interacion in the web.
+The language by default for user interacion in the web.
 
 ### Developed
 
