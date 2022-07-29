@@ -20,3 +20,11 @@ The language by default for user interacion in the web.
 ### Developed
 
 - [specificity.js](./javascript/specificity.js), the same python utility, but in javascript
+
+## Go(lang)
+
+Compiled language developed by Google that's simple and resourceful
+
+### Developed
+
+- None at the moment

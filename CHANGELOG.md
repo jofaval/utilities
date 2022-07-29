@@ -2,6 +2,14 @@
 
 This project won't have versionining per se. But it's format is based in the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2022-07-29
+
+### Added
+
+- Started the base for a Postman Collection generator with Go(lang)
+- Created the Go(lang) folder and README
+- Add missing README for javascript
+
 ## 2022-07-25
 
 ### Added

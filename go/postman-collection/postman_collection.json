@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "1757fe54-004b-4dd4-a174-cfbb6d6ebf61",
+		"name": "[Go(lang)] E-Learning",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15503106"
+	},
+	"item": [
+		{
+			"name": "0.auth",
+			"item": [
+				{
+					"name": "[POST] /login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Get the current auth token\r",
+									"const env = pm.collectionVariables.get(\"env\");\r",
+									"const authKey = `${env}-auth`;\r",
+									"\r",
+									"// Parse the response token to the auth token\r",
+									"const response = pm.response.json();\r",
+									"if (response.data._token) {\r",
+									"    pm.collectionVariables.set(authKey, response.data._token);\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[POST] /logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Get the current auth token\r",
+									"const env = pm.collectionVariables.get(\"env\");\r",
+									"const authKey = `${env}-auth`;\r",
+									"\r",
+									"// Parse the response token to the auth token\r",
+									"pm.collectionVariables.set(authKey, \"\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "New Folder",
+			"item": []
+		},
+		{
+			"name": "Variable testing",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}",
+					"host": [
+						"{{base_url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[GET] Health check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}",
+					"host": [
+						"{{base_url}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{auth}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Response time is less than 200ms\", function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(200);",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "env",
+			"value": "dev",
+			"type": "string"
+		},
+		{
+			"key": "dev-protocol",
+			"value": "http",
+			"type": "string"
+		},
+		{
+			"key": "prod-protocol",
+			"value": "https",
+			"type": "string"
+		},
+		{
+			"key": "protocol",
+			"value": "http",
+			"type": "string"
+		},
+		{
+			"key": "dev-domain",
+			"value": "localhost",
+			"type": "string"
+		},
+		{
+			"key": "prod-domain",
+			"value": "localhost",
+			"type": "string"
+		},
+		{
+			"key": "domain",
+			"value": "localhost",
+			"type": "string"
+		},
+		{
+			"key": "dev-port",
+			"value": "8080",
+			"type": "string"
+		},
+		{
+			"key": "prod-port",
+			"value": "80",
+			"type": "string"
+		},
+		{
+			"key": "port",
+			"value": "8080",
+			"type": "string"
+		},
+		{
+			"key": "dev-auth",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "prod-auth",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "auth",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "dev-base_path",
+			"value": "/",
+			"type": "string"
+		},
+		{
+			"key": "prod-base_path",
+			"value": "/api",
+			"type": "string"
+		},
+		{
+			"key": "base_path",
+			"value": "/",
+			"type": "string"
+		},
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
