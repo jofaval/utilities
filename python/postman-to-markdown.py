@@ -226,7 +226,7 @@ def get_parsed_collection_items(
         if 'item' in item:  # is a folder
             contents.append('\n'.join([
                 f"{recursive_level * '#'} {item['name']}",
-                f"Back to [{parent['name']}](#{get_slugified_name(parent['name'])})"
+                f"[Back to {parent['name']}](#{get_slugified_name(parent['name'])})"
             ]))
             if 'description' in item:
                 contents.append(item['description'])
