@@ -116,12 +116,30 @@ def get_query_markdown_table(
 
     returns str
     """
-    if 'query' not in request_details or len(request_details['query']) < 1:
+    if 'query' not in request_details['url'] or len(request_details['url']['query']) < 1:
         return 'This request does not have any query params available, or documented.'
 
-    markdown_table = ''
+    query_params = request_details['url']['query']
+    markdown_table = []
 
-    markdown_table
+    markdown_table.append('**HTTP query params**')
+    markdown_table.append('')
+    markdown_table.append(
+        f"| {' | '.join([ f'**{colname}**' for colname in query_params[0].keys() ])} |")
+    markdown_table.append(
+        f"| {' | '.join([ '---' for _ in query_params[0].keys() ])} |")
+    for query_param in query_params:
+        try:
+            def get_value(key, value):
+                if value is None:
+                    value = ''
+                return f'**{value}**' if key in ['key'] else value
+            markdown_table.append(
+                f"| {' | '.join([ get_value(key, value) for key, value in query_param.items() ])} |"
+            )
+        except:
+            print(query_param)
+    markdown_table = '\n'.join(markdown_table)
 
     return markdown_table
 
