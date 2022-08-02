@@ -7,4 +7,4 @@
 ## Done
 
 - [specificity.js](./specificity.js)
-- [find-unsuscribe-button.js](./find-unsuscribe-button.js)
+- [find-unsubscribe-button.js](./find-unsubscribe-button.js)
