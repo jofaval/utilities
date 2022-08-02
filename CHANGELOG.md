@@ -2,6 +2,16 @@
 
 This project won't have versionining per se. But it's format is based in the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2022-08-02
+
+### Added
+
+- Created Javascript script for mail unsuscribe detection and interaction
+
+### Attempted
+
+- A new line replace from `\n` to `\\\n` in markdown tables for the `postman-to-markdown.py` utility
+
 ## 2022-07-31
 
 ### Added

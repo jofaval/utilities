@@ -34,6 +34,7 @@ The language by default for user interacion in the web.
 [Table of contents](#contents)
 
 - [specificity.js](./javascript/specificity.js), the same python utility, but in javascript
+- [find-unsuscribe-button.js](./find-unsuscribe-button.js), not perfect, but it helps ease the pain of finding and clicking the unsuscribe button
 
 ## Go(lang)
 [Table of contents](#contents)
