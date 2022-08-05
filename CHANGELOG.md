@@ -2,6 +2,12 @@
 
 This project won't have versionining per se. But it's format is based in the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2022-08-05
+
+### Added
+
+- When generating a markdown document from a Postman collection, credits to the repository will be added by default.
+
 ## 2022-08-02
 
 ### Added

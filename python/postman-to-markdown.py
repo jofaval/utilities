@@ -295,7 +295,8 @@ def get_with_variables_replaced(
 
 
 def get_markdown_from_collection(
-    collection: dict
+    collection: dict,
+    credit_repository=True,
 ) -> str:
     """
     Generate/extract the markdown content from the collection's dict
@@ -308,6 +309,12 @@ def get_markdown_from_collection(
     markdown = []
 
     markdown.append(get_collection_title(collection))
+
+    if credit_repository:
+        repository = 'https://github.com/jofaval/utilities'
+        filepath = f'{repository}/blob/master/python/postman-to-markdown.py'
+        markdown.append(f'Generated with [{filepath}]({filepath})')
+
     markdown.append('## Contents')
     markdown.append('\n'.join(get_collection_table_of_contents(collection)))
     markdown.append(get_parsed_collection_items(
