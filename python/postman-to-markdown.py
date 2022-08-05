@@ -206,7 +206,7 @@ def parse_collection_item_to_markdown(
             f"{recursive_level * '#'} {item['name']}",
             f"[Back to {parent['name']}](#{get_slugified_name(parent['name'])})",
         ]),
-        '\n'.join([
+        '\\\n'.join([
             f"**HTTP method**: {request_details['method'] if 'method' in request_details else 'none to be kown.'}",
             f"**Authentication type**: {request_details['auth']['type'] if 'auth' in request_details else 'none to be kown.'}",
             f"**Url**: `{request_details['url']['raw'] if request_details['url']['raw'] else 'none to be found.'}`"
