@@ -2,6 +2,12 @@
 
 This project won't have versionining per se. But it's format is based in the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2022-09-04
+
+### Added
+
+- Created a script for retreiving Github's repos names and links.
+
 ## 2022-08-05
 
 ### Added

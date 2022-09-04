@@ -35,6 +35,7 @@ The language by default for user interacion in the web.
 
 - [specificity.js](./javascript/specificity.js), the same python utility, but in javascript
 - [find-unsubscribe-button.js](./javascript/find-unsubscribe-button.js), not perfect, but it helps ease the pain of finding and clicking the unsuscribe button
+- [github-repos-urls.js](./javascript/github-repos-urls.js), just a quick utily to get the repository links of a quick filter search
 
 ## Go(lang)
 [Table of contents](#contents)
