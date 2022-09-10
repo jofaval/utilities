@@ -2,7 +2,7 @@
 
 ## In mind
 
-- None at the moment.
+- LinkedIn profile webscraper
 
 ## Done
 
