@@ -1,6 +1,12 @@
-# CHANGELOG #
+# CHANGELOG
 
 This project won't have versionining per se. But it's format is based in the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+
+## 2023-03-25
+
+### Added
+
+- Youtube playlist _total_ watch time calculator.
 
 ## 2022-09-10
 
