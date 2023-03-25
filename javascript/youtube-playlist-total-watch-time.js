@@ -1,5 +1,6 @@
 (() => {
   const CONFIG = {
+    DEBUG: false,
     TIME_SEPARATOR: ":",
     MINUTES_IN_SECONDS: 60,
     HOURS_IN_SECONDS: 60 * 60,
@@ -13,7 +14,9 @@
 
   const watchTimes = rawWatchTimes.map((element) => element.innerHTML.trim());
 
-  console.log({ watchTimes });
+  if (CONFIG.DEBUG) {
+    console.log({ watchTimes });
+  }
 
   /**
    * @param {String} element
