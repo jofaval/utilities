@@ -1,4 +1,4 @@
-# Utilities in JavaScript #
+# Utilities in JavaScript
 
 ## In mind
 
@@ -9,3 +9,4 @@
 - [specificity.js](./specificity.js)
 - [find-unsubscribe-button.js](./find-unsubscribe-button.js)
 - [github-repos-urls.js](./github-repos-urls.js)
+- [youtube-playlist-total-watch-time.js](./youtube-playlist-total-watch-time.js)
