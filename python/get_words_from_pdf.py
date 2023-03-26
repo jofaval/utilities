@@ -68,6 +68,8 @@ def get_total_read_time(total_words: int, words_per_minute: int = AVERAGE_WORDS_
 
 def parse_pdf_page_text(text: str, paragraph_start: int, paragraph_end: int) -> str:
     """Parses a PDF page to get the desired amount of paragraphs"""
+    assert paragraph_start <= paragraph_end
+
     paragraphs = text.split(rf"/{PARAGRAPH_SEPARATOR}+/")
     if not paragraphs or len(paragraphs) <= 0:
         return ""
@@ -84,6 +86,7 @@ def get_pdf_text(
 ) -> str:
     """Gets the text from a PDF given certain constraints"""
     assert pdf_path.endswith(".pdf")
+    assert page_start <= page_end
 
     reader = PdfReader(pdf_path)
     text = [
@@ -162,7 +165,7 @@ def entrypoint() -> None:
 
     if cli_args["read_time_flag"]:
         if not total_words:
-            total_words = get_total_words(pdf_text)
+            total_words = len(get_total_words(pdf_text))
 
         total_read_time = get_total_read_time(
             total_words, cli_args["read_time_flag"]
