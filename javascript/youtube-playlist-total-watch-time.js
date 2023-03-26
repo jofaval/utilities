@@ -1,3 +1,6 @@
+// Inspired by curiosity to know the total time of:
+// [Docker and Kubernetes Tutorial for Beginners - TechWorld with Nana](https://www.youtube.com/playlist?list=PLy7NrYWoggjwPggqtFsI_zMAwvG0SqYCb)
+
 (() => {
   const CONFIG = {
     DEBUG: false,
