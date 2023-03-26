@@ -2,6 +2,12 @@
 
 This project won't have versionining per se. But it's format is based in the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2023-03-26
+
+### Added
+
+- Created a CLI script to get words from a pdf and retrieve (total words and read time)
+
 ## 2023-03-25
 
 ### Added

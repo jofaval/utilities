@@ -26,6 +26,7 @@ An easy and fast to develop in language that's proven to be very useful, special
 - [specificity.py](./python/specificity.py), utility functions to ease the pain of CSS specificity.
 - [github-repository-created_at.py](./python/github-repository-created_at.py), utility to sort by date public github repos from a user.
 - [postman-to-markdown.py](./python/postman-to-markdown.py), utility to transform a postman collection to a markdown doc.
+- [get_words_from_pdf.py](./python/get_words_from_pdf.py), CLI script to get words from a pdf and retrieve (total words and read time).
 
 ## Javascript
 
