@@ -42,6 +42,7 @@ The language by default for user interacion in the web.
 - [find-unsubscribe-button.js](./javascript/find-unsubscribe-button.js), not perfect, but it helps ease the pain of finding and clicking the unsuscribe button
 - [github-repos-urls.js](./javascript/github-repos-urls.js), just a quick utily to get the repository links of a quick filter search
 - [youtube-playlist-total-watch-time.js](./javascript/youtube-playlist-total-watch-time.js), sums up the total watch time for a given YouTube (watch/play)list
+- [get-trello-checklist-links.js](./javascript/get-trello-checklist-links.js), gets all the links from trello checklists in an open card
 
 ## Go(lang)
 
