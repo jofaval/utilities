@@ -34,12 +34,15 @@ Optionals:
 """
 
 import argparse
+import logging
 import os
 import re
+from concurrent.futures import ThreadPoolExecutor
+from multiprocessing import Pool, cpu_count
 from sys import maxsize
-from typing import List
+from typing import List, Tuple
 
-from pypdf import PdfReader
+from pypdf import PageObject, PdfReader
 
 # Source: https://irisreading.com/what-is-the-average-reading-speed/
 AVG_LEARNING_RATE_WORDS_PER_MINUTE = 150
@@ -48,6 +51,9 @@ AVERAGE_WORDS_PER_MINUTE = AVG_LEARNING_RATE_WORDS_PER_MINUTE
 
 PARAGRAPH_SEPARATOR = "\n\n"
 INFINITY = maxsize
+
+TOTAL_PROCESSORS = cpu_count()
+PAGES_TUPLE_SPACE: List[str] = []
 
 
 def get_total_words(text: str) -> List[str]:
@@ -64,6 +70,18 @@ def get_total_read_time(total_words: int, words_per_minute: int = AVERAGE_WORDS_
     if not isinstance(words_per_minute, int):
         words_per_minute = AVERAGE_WORDS_PER_MINUTE
     return round(total_words / words_per_minute)
+
+
+def get_pdf_page_text_job(data: Tuple[PageObject, int, int]) -> None:
+    """Job to parallelize the pdf page extraction for speed performance improvement"""
+    page, paragraph_start, paragraph_end = data
+    parsed = parse_pdf_page_text(
+        page.extract_text(),
+        paragraph_start,
+        paragraph_end
+    )
+
+    PAGES_TUPLE_SPACE.append(parsed)
 
 
 def parse_pdf_page_text(text: str, paragraph_start: int, paragraph_end: int) -> str:
@@ -88,18 +106,25 @@ def get_pdf_text(
     assert pdf_path.endswith(".pdf")
     assert page_start <= page_end
 
-    reader = PdfReader(pdf_path)
-    text = [
-        parse_pdf_page_text(
-            page.extract_text(),
-            paragraph_start,
-            paragraph_end
-        )
+    logger = logging.getLogger("pypdf")
+    logger.setLevel(logging.ERROR)
+
+    reader = PdfReader(pdf_path, strict=False)
+    PAGES_TUPLE_SPACE.clear()
+    job_elements = [
+        (page, paragraph_start, paragraph_end)
         for (index, page) in enumerate(reader.pages)
         if page_start <= index <= page_end
     ]
-    print(len(text), "page(s) extracted.")
-    text = "\n".join(text)
+
+    with ThreadPoolExecutor() as executor:
+        executor.map(
+            get_pdf_page_text_job,
+            job_elements,
+        )
+
+    print(len(PAGES_TUPLE_SPACE), "page(s) extracted.")
+    text = "\n".join(PAGES_TUPLE_SPACE)
 
     return text
 
