@@ -1,12 +1,16 @@
 # CHANGELOG
 
-This project won't have versionining per se. But it's format is based in the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+This project won't have versioning per se. But it's format is based in the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## 2023-04-03
 
 ### Added
 
 - Javascript utility to get all the links from an open trello checklist and print them out
+
+### Fixed
+
+- Project's CHANGELOG description typo
 
 ## 2023-04-02
 
