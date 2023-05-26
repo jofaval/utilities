@@ -44,6 +44,7 @@ The language by default for user interacion in the web.
 - [github-repos-urls.js](./javascript/github-repos-urls.js), just a quick utily to get the repository links of a quick filter search
 - [youtube-playlist-total-watch-time.js](./javascript/youtube-playlist-total-watch-time.js), sums up the total watch time for a given YouTube (watch/play)list
 - [get-trello-checklist-links.js](./javascript/get-trello-checklist-links.js), gets all the links from trello checklists in an open card
+- [get-article-details-medium-profile.js](./javascript/get-article-details-medium-profile.js), gets article details from a medium profile
 
 ## Go(lang)
 

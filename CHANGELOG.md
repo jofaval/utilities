@@ -2,6 +2,12 @@
 
 This project won't have versioning per se. But it's format is based in the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2023-05-27
+
+### Added
+
+- JavaScript utility to scrape _basic_ article details from a medium profile
+
 ## 2023-04-25
 
 ### Added
