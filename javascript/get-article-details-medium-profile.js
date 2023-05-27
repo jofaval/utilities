@@ -27,7 +27,7 @@
       const [mediumDomain, rawAuthorName] = link.split("@");
       const authorName = `@${rawAuthorName.split("/")[0]}`;
 
-      domain = [mediumDomain, authorName].join("/");
+      domain = mediumDomain + authorName;
     }
 
     return [domain, canonicalId].join("/");
