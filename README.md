@@ -45,6 +45,7 @@ The language by default for user interacion in the web.
 - [youtube-playlist-total-watch-time.js](./javascript/youtube-playlist-total-watch-time.js), sums up the total watch time for a given YouTube (watch/play)list
 - [get-trello-checklist-links.js](./javascript/get-trello-checklist-links.js), gets all the links from trello checklists in an open card
 - [get-article-details-medium-profile.js](./javascript/get-article-details-medium-profile.js), gets article details from a medium profile
+- [2048-solver.js](./javascript/2048-solver.js), 2048 solver, mainly made for the 8x8 grid
 
 ## Go(lang)
 

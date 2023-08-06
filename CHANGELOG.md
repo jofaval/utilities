@@ -2,6 +2,12 @@
 
 This project won't have versioning per se. But it's format is based in the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2023-08-06
+
+### Added
+
+- 2048 solver, tailored for the 8x8 grid, just for fun
+
 ## 2023-05-27
 
 ### Added
