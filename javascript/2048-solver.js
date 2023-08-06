@@ -1,9 +1,14 @@
+/**
+ * Specifically made for the 2048 8x8 strategy
+ */
+
+// https://2048game.club/2048-8x8-board/
 // https://api.razzlepuzzles.com/2048
 
 (() => {
   const CONFIG = {
     /** expressed in ms (milliseconds) */
-    INTERVAL_TIMEOUT: 250,
+    INTERVAL_TIMEOUT: 0,
     DEBUG: false,
     CANCEL_WITH_TIMEOUT: false,
     /** expressed in ms (milliseconds) */
@@ -20,18 +25,18 @@
   };
 
   const KeyboardInput = {
-    UP: "ArrowUp",
-    RIGHT: "ArrowRight",
-    DOWN: "ArrowDown",
-    LEFT: "ArrowLeft",
+    UP: { key: "ArrowUp", which: 38 },
+    RIGHT: { key: "ArrowRight", which: 39 },
+    DOWN: { key: "ArrowDown", which: 40 },
+    LEFT: { key: "ArrowLeft", which: 37 },
   };
 
   /**
    * @param {KeyboardInput} key
    */
   const press = (key) => {
-    logDebug({ key });
-    document.dispatchEvent(new KeyboardEvent("keydown", { key }));
+    logDebug(key);
+    document.dispatchEvent(new KeyboardEvent("keydown", key));
   };
 
   const actions = [
@@ -57,7 +62,13 @@
     }
   };
 
-  const intervalId = setInterval(iterate, CONFIG.INTERVAL_TIMEOUT);
+  let intervalId;
+  const resume = () => {
+    CONFIG.CANCELLED = false;
+    intervalId = setInterval(iterate, CONFIG.INTERVAL_TIMEOUT);
+  };
+  resume();
+
   const cancel = () => {
     logDebug("Stopping...");
     CONFIG.CANCELLED = true;
@@ -68,5 +79,5 @@
     setTimeout(cancel, CONFIG.DEBUG_TIMEOUT_STOP);
   }
 
-  return { cancel };
+  return { resume, cancel };
 })();
